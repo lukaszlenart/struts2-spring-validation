@@ -38,7 +38,7 @@ public class LoginTest extends ConfigTest {
         Login login = new Login();
         login.setUsername("username");
         login.setPassword("password");
-        String result = login.execute();
+        String result = login.signin();
         assertSuccess(result);
     }
 

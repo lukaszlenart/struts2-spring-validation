@@ -26,13 +26,12 @@ import com.opensymphony.xwork2.config.RuntimeConfiguration;
 import com.opensymphony.xwork2.config.entities.ActionConfig;
 import com.opensymphony.xwork2.config.entities.ResultConfig;
 import com.opensymphony.xwork2.config.providers.XmlConfigurationProvider;
+import org.apache.struts2.StrutsSpringTestCase;
 
-import java.util.Map;
 import java.util.List;
+import java.util.Map;
 
-import org.apache.struts2.StrutsTestCase;
-
-public class ConfigTest extends StrutsTestCase {
+public class ConfigTest extends StrutsSpringTestCase {
 
     protected void assertSuccess(String result) throws Exception {
         assertTrue("Expected a success result!",
