@@ -9,7 +9,7 @@
     <name>struts2-spring-validation</name>
 
     <properties>
-        <struts2.version>2.3.11-SNAPSHOT</struts2.version>
+        <struts2.version>2.3.12-SNAPSHOT</struts2.version>
     </properties>
 
     <dependencies>
@@ -86,4 +86,16 @@
             </plugin>
         </plugins>
     </build>
+    
+    <repositories>
+        <repository>
+            <id>apache-snapshot</id>
+            <url>https://repository.apache.org/content/groups/snapshots/</url>
+            <layout>default</layout>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
+    
 </project>
