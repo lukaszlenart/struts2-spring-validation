@@ -1,5 +1,6 @@
-struts2-spring-validation
-=========================
+# Struts2 validation with Spring integration
+
+[![Build Status](https://travis-ci.org/lukaszlenart/struts2-spring-validation.png?branch=master)](https://travis-ci.org/lukaszlenart/struts2-spring-validation)
 
 Simple demo how to use Struts2 validation with Spring integration
 
