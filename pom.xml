@@ -9,7 +9,7 @@
     <name>struts2-spring-validation</name>
 
     <properties>
-        <struts2.version>2.3.16-SNAPSHOT</struts2.version>
+        <struts2.version>2.5.20</struts2.version>
     </properties>
 
     <dependencies>
