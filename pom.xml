@@ -9,7 +9,9 @@
     <name>struts2-spring-validation</name>
 
     <properties>
-        <struts2.version>2.5.20</struts2.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <struts2.version>2.5.22</struts2.version>
+        <log4j.version>2.13.2</log4j.version>
     </properties>
 
     <dependencies>
@@ -40,9 +42,15 @@
         </dependency>
 
         <dependency>
-            <groupId>commons-logging</groupId>
-            <artifactId>commons-logging</artifactId>
-            <version>1.1.1</version>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-api</artifactId>
+            <version>${log4j.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-core</artifactId>
+            <version>${log4j.version}</version>
         </dependency>
 
         <dependency>
@@ -71,10 +79,25 @@
     <build>
         <plugins>
             <plugin>
-                <groupId>org.mortbay.jetty</groupId>
-                <artifactId>maven-jetty-plugin</artifactId>
-                <version>6.1.21</version>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.8.1</version>
                 <configuration>
+                    <target>1.8</target>
+                    <source>1.8</source>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.eclipse.jetty</groupId>
+                <artifactId>jetty-maven-plugin</artifactId>
+                <version>9.4.22.v20191022</version>
+                <configuration>
+                    <stopKey>CTRL+C</stopKey>
+                    <stopPort>8999</stopPort>
+                    <webAppSourceDirectory>${basedir}/src/main/webapp/</webAppSourceDirectory>
+                    <webAppConfig>
+                        <descriptor>${basedir}/src/main/webapp/WEB-INF/web.xml</descriptor>
+                    </webAppConfig>
                     <scanIntervalSeconds>10</scanIntervalSeconds>
                     <scanTargets>
                         <scanTarget>src/main/webapp/WEB-INF</scanTarget>
@@ -86,16 +109,5 @@
             </plugin>
         </plugins>
     </build>
-    
-    <repositories>
-        <repository>
-            <id>apache-snapshot</id>
-            <url>https://repository.apache.org/content/groups/snapshots/</url>
-            <layout>default</layout>
-            <snapshots>
-                <enabled>true</enabled>
-            </snapshots>
-        </repository>
-    </repositories>
-    
+
 </project>
